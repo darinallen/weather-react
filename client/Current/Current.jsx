@@ -8,7 +8,7 @@ const Current = props => (
     <div>
       <img
         className="temp icon"
-        src={`http://openweathermap.org/img/w/${props.currentData.weather[0].icon}.png`}
+        src={`https://openweathermap.org/img/w/${props.currentData.weather[0].icon}.png`}
         alt="Weather Icon"
       />
       <h1 className="temp">{Math.round(props.currentData.main.temp)}°</h1>

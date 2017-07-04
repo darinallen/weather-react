@@ -15,7 +15,7 @@ const Day = props => {
           <h5>{dayOfWeek}</h5>
           <img
             className="icon"
-            src={`http://openweathermap.org/img/w/${props.dayData.weather[0].icon}.png`}
+            src={`https://openweathermap.org/img/w/${props.dayData.weather[0].icon}.png`}
             alt="Weather Icon"
           />
           <h5>

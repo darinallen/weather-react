@@ -21,7 +21,8 @@ class App extends Component {
       forecastSelectedData: { list: [] },
       location: {},
       selectedRadioButton: 'fahrenheit',
-      zip: ''
+      zip: '',
+      loading: false
     };
   }
 
@@ -48,7 +49,7 @@ class App extends Component {
     });
   };
 
-  // Get the current forecast from OpenWeatherMap based on location data
+  // Get the current forecast from OpenWeatherMap based on zip code
   getForecastFahrenheitByZip = () => {
     axios.post('api/forecast/fahrenheit-zip', { zip: this.state.zip }).then(res => {
       this.setState({ forecastFahrenheitData: res.data });
@@ -64,6 +65,7 @@ class App extends Component {
 
   // Get location data and weather data
   getWeatherByGeo = () => {
+    this.setState({ loading: true });
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({
         location: {
@@ -75,6 +77,7 @@ class App extends Component {
       this.getCurrentCelsiusByGeo();
       this.getForecastFahrenheitByGeo();
       this.getForecastCelsiusByGeo();
+      this.setState({ loading: false });
     });
   };
 
@@ -148,6 +151,11 @@ class App extends Component {
           zip={this.state.zip}
         />
         {/* Only display weather content if weather data exists */}
+        {this.state.loading
+          ? <div className="loading-container">
+              <img className="loading-image" src="https://m.popkey.co/163fce/Llgbv_s-200x150.gif" alt="loading icon" />
+            </div>
+          : false}
         {this.state.currentSelectedData.main.temp !== ''
           ? <div>
               <Current currentData={this.state.currentSelectedData} location={this.state.location} />

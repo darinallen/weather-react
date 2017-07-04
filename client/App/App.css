@@ -13,3 +13,12 @@
 .home-image {
   width: 100%;
 }
+
+.loading-container {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.loading-image {
+  width: 100px;
+}

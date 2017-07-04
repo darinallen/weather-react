@@ -1,0 +1,24 @@
+.day-container {
+  padding: 10px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.day-description {
+  text-transform: capitalize;
+}
+
+.icon {
+  padding: 0;
+}
+
+.high {
+  font-weight: bold;
+  color: red;
+}
+
+.low {
+  font-weight: bold;
+  color: blue;
+}

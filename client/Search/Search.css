@@ -1,0 +1,33 @@
+.search-container {
+  padding-bottom: 50px;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.search-content {
+
+}
+
+.location-button {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.zip-form {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .zip-button {
+    width: 220px;
+  }
+  .zip-entry {
+    margin: 0 auto;
+    width: 220px;
+    margin-bottom: 20px;
+  }
+  .zip-entry-text {
+    text-align: center;
+  }
+}
